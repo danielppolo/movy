@@ -1,0 +1,5 @@
+<% @bookings.each do |e| %>
+<h3><%= e.bike %></h3>
+<h3><%= e.user %></h3>
+<p><%= e.start_date %> - <%= e.end_date %></p>
+<% end %>
