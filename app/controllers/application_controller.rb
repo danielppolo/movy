@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # Pundit Gem
+# Pundit Gem
   before_action :authenticate_user!
+
   include Pundit
 
   # Pundit: white-list approach.

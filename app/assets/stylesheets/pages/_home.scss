@@ -1,1 +1,11 @@
-// Specific CSS for your home-page
+.jumbotron{
+  background-image: url('/assets/bg_bike.jpg');
+ 	background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   color: #FFF;
+}
+.img-round-home{
+	border-radius: 50%;
+	height: 250px;
+}
