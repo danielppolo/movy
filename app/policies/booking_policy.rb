@@ -24,11 +24,11 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def approve
+  def approve?
     record.user == user
   end
 
-  def decline
+  def decline?
     record.user == user
   end
 

@@ -51,11 +51,13 @@ class BookingsController < ApplicationController
   def approve
     authorize @booking
     @booking.accepted!
+    redirect_to @booking, notice: 'Booking was accepted!.'
   end
 
   def decline
     authorize @booking
     @booking.rejected!
+    redirect_to @booking, notice: 'Booking was declined!.'
   end
 
   private
