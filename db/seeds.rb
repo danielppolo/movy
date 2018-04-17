@@ -1,3 +1,4 @@
+
 puts "resetting the seeds"
 User.destroy_all
 Bike.destroy_all
@@ -38,37 +39,38 @@ kawasaki.save
 bmw = Bike.new(make: "BMW", model: "Roadout", description: "For forest and countryside",
        year:2017, category: "outdoor", cc: 250, rate: 78, user: user4,
        photo: "Link to a photo", location: "Crema", consumption: 7.3)
+
 bmw.save
 
 
 # BOOKINGS
 booking1 = Booking.new(start_date:"23-02-2018", end_date:"25-02-2018", status: 0,
-           user: user1 , bike: ducati)
+            user: user1 , bike: ducati)
 booking1.save
 booking2 = Booking.new(start_date:"30-11-2017", end_date:"12-12-2017", status: 2,
-           user: user1 , bike: yamaha)
+            user: user1 , bike: yamaha)
 booking2.save
 booking3 = Booking.new(start_date:"03-09-2016", end_date:"17-09-2016", status: 1,
-           user: user2, bike: honda)
+            user: user2, bike: honda)
 booking3.save
 booking4 = Booking.new(start_date:"30-11-2017", end_date:"12-12-2017", status: 2,
-           user: user3, bike: harley)
+            user: user3, bike: harley)
 booking4.save
 booking5 = Booking.new(start_date:"26-01-2018", end_date:"28-02-2018", status: 0,
-           user: user4, bike: bmw)
+            user: user4, bike: bmw)
 booking5.save
 
 
 # # PROFILES
 profile1 = Profile.new(name: "Paolo", photo: "Profile photo", bio: "Italian 32 years old",
-experience: 12, user: user1)
+ experience: 12, user: user1)
 profile1.save
 profile2 = Profile.new(name: "Marco", photo: "Profile photo", bio: "German 28 years old",
-experience: 10, user: user2)
+ experience: 10, user: user2)
 profile2.save
 profile3 = Profile.new(name: "Elena", photo: "Profile photo", bio: "Spanish 32 years old",
-experience: 2, user: user3)
+ experience: 2, user: user3)
 profile3.save
 profile4 = Profile.new(name: "Paolo", photo: "Profile photo", bio: "Italian 45 years old",
-experience: 12, user: user4)
+ experience: 12, user: user4)
 profile4.save

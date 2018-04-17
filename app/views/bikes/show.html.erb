@@ -1,0 +1,49 @@
+<h1>BIKE'S VIEW</h1>
+
+<h3> The bike you viewing is: </h3>
+<ul>
+  <li><%= @bike.make %></li>
+  <li><%= @bike.model %></li>
+  <li><%= @bike.photo %></li>
+</ul>
+
+<br>
+<br>
+
+<h3> The bike's rate is: </h3>
+<p><%= @bike.rate %> <%= "$/day" %></p>
+
+<br>
+<br>
+
+<h3> The bike's details are: </h3>
+<ul>
+  <li><%= @bike.category %></li>
+  <li><%= @bike.year %></li>
+  <li><%= @bike.description %></li>
+  <li><%= @bike.cc %></li>
+  <li><%= @bike.consumption %> <%= "Km/day" %></li>
+</ul>
+
+<br>
+<br>
+
+<h3>The bike owner is: </h3>
+<ul>
+  <li><%= @bike.user.profile.name %></li>
+  <li><%= @bike.user.email %></li>
+</ul>
+
+<br>
+<br>
+
+<h3>The bike is located in: </h3>
+<td><%= @bike.location %></td>
+
+<br>
+<br>
+
+<%= link_to "Book this bike", "TO BE DEFINED BY DANIEL" %>
+<br>
+<%= link_to "Go to the other listings",  bikes_path %>
+

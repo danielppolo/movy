@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bikes
+
   devise_for :users
   root to: 'pages#home'
   resources :profiles, only: [:new, :create, :edit, :update, :show]
