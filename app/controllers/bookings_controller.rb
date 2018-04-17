@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    before_action :set_booking, only: [:show, :edit, :update, :destroy]
+    before_action :set_booking, only: [:show, :edit, :update, :destroy, :decline, :approve]
 
   def index
     @bookings = policy_scope(Booking)
@@ -46,6 +46,16 @@ class BookingsController < ApplicationController
     @bike = @booking.bike
     @booking.destroy
     redirect_to @bike, notice: 'Booking was successfully canceled!.'
+  end
+
+  def approve
+    authorize @booking
+    @booking.accepted!
+  end
+
+  def decline
+    authorize @booking
+    @booking.rejected!
   end
 
   private

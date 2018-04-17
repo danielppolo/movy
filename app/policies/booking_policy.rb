@@ -24,6 +24,14 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def approve
+    record.user == user
+  end
+
+  def decline
+    record.user == user
+  end
+
   class Scope < Scope
     def resolve
       scope.where(user: user)
