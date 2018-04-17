@@ -1,17 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-# 10.times do
-#   User.new( email: Faker::Internet.email, password: Faker::RickAndMorty.location)
-#   5.times do
-#     Bike.new( make: Faker::Vehicle.manufacture, model:, description:, year: , category:, cc: round(rand(10)), consumption: rand(5), )
-#   end
-# end
 puts "resetting the seeds"
 User.destroy_all
 Bike.destroy_all
@@ -30,28 +17,29 @@ user4.save
 
 # BIKES
 ducati = Bike.new(make: "Ducati", model: "Monster", description: "Good condition",
-        year: 2004, category: "Sport", cc: 250, rate: 50, user: user1 ,
-        photo: "Link to a photo", location: "Milan", consumption: 6.5)
+       year: 2004, category: "Sport", cc: 250, rate: 50, user: user1 ,
+       photo: "Link to a photo", location: "Milan", consumption: 6.5)
 ducati.save
 yamaha = Bike.new(make: "Yamaha", model: "DoubleX", description: "Fast and steady",
-        year: 2015, category: "Sport", cc: 200, rate: 43, user: user1,
-        photo: "Link to a photo", location: "Brescia", consumption: 8)
+       year: 2015, category: "Sport", cc: 200, rate: 43, user: user1,
+       photo: "Link to a photo", location: "Brescia", consumption: 8)
 yamaha.save
 honda = Bike.new(make: "Honda", model: "Roadout", description: "For outdoor",
-        year: 1999, category: "Roadster", cc: 125, rate: 20, user: user2 ,
-        photo: "Link to a photo", location: "Bergamo", consumption: 7.6)
+       year: 1999, category: "Roadster", cc: 125, rate: 20, user: user2 ,
+       photo: "Link to a photo", location: "Bergamo", consumption: 7.6)
 honda.save
 harley = Bike.new(make: "Harley", model: "Luxe", description: "For long distance",
-        year: 2004, category: "Street", cc: 300, rate: 55, user: user3,
-        photo: "Link to a photo", location: "Milan", consumption: 8)
+       year: 2004, category: "Street", cc: 300, rate: 55, user: user3,
+       photo: "Link to a photo", location: "Milan", consumption: 8)
 harley.save
 kawasaki = Bike.new(make: "kawasaki", model: "OldStyle", description: "Old motorbike but good",
-        year:1980, category: "Sport", cc: 125, rate: 20, user: user4,
-        photo: "Link to a photo", location: "Crema", consumption: 10.7)
+       year:1980, category: "Sport", cc: 125, rate: 20, user: user4,
+       photo: "Link to a photo", location: "Crema", consumption: 10.7)
 kawasaki.save
 bmw = Bike.new(make: "BMW", model: "Roadout", description: "For forest and countryside",
-        year:2017, category: "outdoor", cc: 250, rate: 78, user: user4,
-        photo: "Link to a photo", location: "Crema", consumption: 7.3)
+       year:2017, category: "outdoor", cc: 250, rate: 78, user: user4,
+       photo: "Link to a photo", location: "Crema", consumption: 7.3)
+
 bmw.save
 
 
@@ -86,6 +74,3 @@ profile3.save
 profile4 = Profile.new(name: "Paolo", photo: "Profile photo", bio: "Italian 45 years old",
  experience: 12, user: user4)
 profile4.save
-
-
-
