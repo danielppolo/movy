@@ -1,16 +1,76 @@
-<% @bikes.each do |bike| %>
-<ul>
-  <li>
-    <%= bike.model %>
-    <%= bike.description %>
-    <%= bike.year %>
-    <%= bike.category %>
-    <%= bike.cc %>
-    <%= bike.rate %>
-    <%= bike.photo %>
-    <%= bike.location %>
-    <%= bike.consumption %>
-  </li>
-</ul>
-<% end %>
+
+
+<!-- THIS CAN BE REMOVED, IT IS JUST FOR READIBILITY -->
+<style>
+  td{
+    padding:5px 10px;
+  }
+</style>
+<!-- THIS UP CAN BE REMOVED, IT IS JUST FOR READIBILITY
+ -->
+
+
+<h1>Listing Bikes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th> <!-- The one renting out a car -->
+      <th>Email</th>
+      <th>Rate</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Category</th>
+      <th>Photo</th>
+      <th>Year</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>CC</th>
+      <th>Consumption</th>
+      <th colspan="11"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bikes.each do |bike| %>
+      <tr>
+        <td><%= bike.user.profile.name %></td>
+        <td><%= bike.user.email%></td>
+        <td><%= bike.rate %> <%= "$/day" %></td>
+        <td><%= bike.make %></td>
+        <td><%= bike.model %></td>
+        <td><%= bike.category %></td>
+        <td><%= bike.photo %></td>
+        <td><%= bike.year %></td>
+        <td><%= bike.location %></td>
+        <td><%= bike.description %></td>
+        <td><%= bike.cc %></td>
+        <td><%= bike.consumption %> <%= "Km/liter" %></td>
+
+        <td>
+          <% if policy(bike).show? %>
+            <%= link_to 'Show', bike %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(bike).edit? == false %>
+            <%= link_to 'Book this bike', "LINK TO BE DEFINED BY DANIEL" %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(bike).update? %>
+            <%= link_to 'Edit', edit_bike_path(bike) %>
+          <% end %>
+        </td>
+        <td>
+          <% if policy(bike).destroy? %>
+            <%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
