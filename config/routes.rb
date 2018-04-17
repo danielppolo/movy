@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :profiles, only: [:new, :create, :edit, :update, :show]
 
-  get '/booking/:id/approve', to: 'bookings#approve', as: 'approve_booking'
-  get '/booking/:id/decline', to: 'bookings#decline', as: 'decline_booking'
+  get '/bookings/:id/approve', to: 'bookings#approve', as: 'approve_booking'
+  get '/bookings/:id/decline', to: 'bookings#decline', as: 'decline_booking'
+  get '/bikes/:id/availability', to: 'bikes#toggle', as: 'toggle_bike'
 end

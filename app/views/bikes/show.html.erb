@@ -42,7 +42,12 @@
 
 <br>
 <br>
+<h3>The bike is <%= @bike.status %></h3>
 
+<% if policy(@bike).toggle? %>
+<%= link_to "Change bike rental status", toggle_bike_path(@bike) %>
+<% end %>
+<br>
 <%= link_to "Book this bike", "TO BE DEFINED BY DANIEL" %>
 <br>
 <%= link_to "Go to the other listings",  bikes_path %>

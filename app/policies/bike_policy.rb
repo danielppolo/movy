@@ -16,6 +16,10 @@ class BikePolicy < ApplicationPolicy
     record.user == user
   end
 
+  def toggle?
+    record.user == user
+  end
+
   class Scope < Scope
     def resolve
       scope.all
