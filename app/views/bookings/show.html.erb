@@ -2,3 +2,9 @@
 <h2><%= @booking.user.email %></h2>
 <h3><%= @booking.start_date %></h3>
 <h3><%= @booking.end_date %></h3>
+<% if policy(@booking).edit? %>
+<%= link_to "Edit booking", edit_booking_path(@booking) %>
+<% end %>
+<% if policy(@booking).destroy? %>
+<%= link_to "Delete booking", @booking, method: :delete %>
+<% end %>

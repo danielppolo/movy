@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
     if @booking.update(booking_params)
-      redirect_to root_path, notice: 'Booking was successfully updated!'
+      redirect_to @booking, notice: 'Booking was successfully updated!'
     else
       render :new
     end
@@ -43,8 +43,9 @@ class BookingsController < ApplicationController
 
   def destroy
     authorize @booking
+    @bike = @booking.bike
     @booking.destroy
-    redirect_to bookings_url, notice: 'Booking was successfully canceled!.'
+    redirect_to @bike, notice: 'Booking was successfully canceled!.'
   end
 
   private

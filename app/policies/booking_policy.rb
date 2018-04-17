@@ -1,12 +1,7 @@
 class BookingPolicy < ApplicationPolicy
 
-  # def index?
-  #   # scope.where(user: user)
-  # end
-
   def show?
     true
-    # scope.where(user: user)
   end
 
   def new?
@@ -31,7 +26,7 @@ class BookingPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 end

@@ -2,4 +2,10 @@
 <h3><%= e.bike.make %> - <%= e.bike.model %></h3>
 <h3><%= e.user.email %></h3>
 <p><%= e.start_date %> - <%= e.end_date %></p>
+<% if policy(Booking).edit? %>
+<%= link_to "Edit booking", edit_booking_path(e) %>
+<% end %>
+<% if policy(Booking).destroy? %>
+<%= link_to "Delete booking", booking_path(e), method: :delete %>
+<% end %>
 <% end %>

@@ -25,7 +25,7 @@ ducati = Bike.new(make: "Ducati", model: "Monster", description: "Good condition
 ducati.save
 yamaha = Bike.new(make: "Yamaha", model: "DoubleX", description: "Fast and steady",
        year: 2015, category: "Sport", cc: 200, rate: 43, user: user1,
-       photo: "Link to a photo", location: "Brescia", consumption: 5.)
+       photo: "Link to a photo", location: "Brescia", consumption: 5.3)
 yamaha.save
 honda = Bike.new(make: "Honda", model: "Roadout", description: "For outdoor",
        year: 1999, category: "Roadster", cc: 125, rate: 20, user: user2 ,
@@ -33,7 +33,7 @@ honda = Bike.new(make: "Honda", model: "Roadout", description: "For outdoor",
 honda.save
 harley = Bike.new(make: "Harley", model: "Luxe", description: "For long distance",
        year: 2004, category: "Street", cc: 300, rate: 55, user: user3,
-       photo: "Link to a photo", location: "Milan", consumption: 5.)
+       photo: "Link to a photo", location: "Milan", consumption: 5.3)
 harley.save
 kawasaki = Bike.new(make: "kawasaki", model: "OldStyle", description: "Old motorbike but good",
        year:1980, category: "Sport", cc: 125, rate: 20, user: user4,
