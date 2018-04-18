@@ -63,7 +63,7 @@
         </td>
         <td>
           <% if policy(bike).edit? == false %>
-            <%= link_to 'Book this bike', "LINK TO BE DEFINED BY DANIEL" %>
+            <%= link_to 'Book this bike', new_bike_booking_path(bike) %>
           <% end %>
         </td>
         <td>
