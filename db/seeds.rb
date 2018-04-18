@@ -16,7 +16,7 @@ p "Filling the racers with magic bios"
 users = User.all
 
 p "Cooking racers for the rainbow race"
-200.times do
+20.times do
   Bike.create(make: Faker::Vehicle.manufacture, model: (Faker::Vehicle.vin).first(3), description: Faker::RickAndMorty.quote,
   year: rand(1950...2018).round, category: Faker::Hipster.word, cc: rand(550).round, rate: Faker::Commerce.price, user: users.sample, location: Faker::Address.street_address,
   consumption: Faker::Commerce.price)
