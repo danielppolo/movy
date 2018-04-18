@@ -1,58 +1,69 @@
-<h1>BIKE'S VIEW</h1>
+<div class = "h1-div-title-showpage">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <img src="https://bit.ly/2EWVPxD" alt="Photo bike" class="image-show-bike">
+    </div>
 
-<h3> The bike you viewing is: </h3>
-<ul>
-  <li><%= @bike.make %></li>
-  <li><%= @bike.model %></li>
-  <li><%= @bike.photo %></li>
-</ul>
+    <div class="div-specific-bike-show col-sm-4">
+      <span class="special-badge badge badge-brand-primary"><%= @bike.rate %><%= "$/day" %></span>
+      <ul>
+        <ol><%= @bike.make %></ol>
+        <ol><%= @bike.model %></ol>
+        <%= link_to "Rent this bike", bikes_path, class: "btn btn-primary" %>
 
-<br>
-<br>
+      </ul>
+    </div>
+  </div>
+  <div class="div-detail-bike-show col-sm-12">
+    <h3> Description: </h3>
+    <ul>
+      <ol><%= "Category: " %><%= @bike.category %></ol>
+      <ol><%= "Year: " %><%= @bike.year %></ol>
+      <ol><%= "Description: " %><%= @bike.description %></ol>
+      <ol><%= "CC: " %><%= @bike.cc %></ol>
+      <ol><%= "Consumption: " %><%= @bike.consumption %> <%= "km/liter" %></ol>
+    </ul>
+  </div>
 
-<h3> The bike's rate is: </h3>
-<p><%= @bike.rate %> <%= "$/day" %></p>
+  <br>
+  <br>
 
-<br>
-<br>
+  <div class="div-owner-bike-show">
+    <h3>The bike owner is: </h3>
+    <ul>
+      <li><%= @bike.user.profile.name %></li>
+      <li><%= @bike.user.email %></li>
+    </ul>
+  </div>
 
-<h3> The bike's details are: </h3>
-<ul>
-  <li><%= @bike.category %></li>
-  <li><%= @bike.year %></li>
-  <li><%= @bike.description %></li>
-  <li><%= @bike.cc %></li>
-  <li><%= @bike.consumption %> <%= "Km/day" %></li>
-</ul>
+  <br>
+  <br>
 
-<br>
-<br>
+  <div class="div-location-bike-show">
+    <h3>The bike is located in: </h3>
+    <td><%= @bike.location %></td>
+  </div>
 
-<h3>The bike owner is: </h3>
-<ul>
-  <li><%= @bike.user.profile.name %></li>
-  <li><%= @bike.user.email %></li>
-</ul>
+  <br>
+  <br>
 
-<br>
-<br>
+  <div class="div-status-bike-show">
+    <h3>The bike is <%= @bike.status %></h3>
+  </div>
 
-<h3>The bike is located in: </h3>
-<td><%= @bike.location %></td>
+  <div class="div-buttons-bike-show">
 
-<br>
-<br>
-<h3>The bike is <%= @bike.status %></h3>
+    <% if policy(@bike).toggle? %>
+    <%= link_to "Change bike rental status", toggle_bike_path(@bike), class: "btn-btn-danger" %>
+    <% end %>
 
-<% if policy(@bike).toggle? %>
-<%= link_to "Change bike rental status", toggle_bike_path(@bike) %>
-<% end %>
-<br>
-<%= link_to "Book this bike", "TO BE DEFINED BY DANIEL" %>
-<br>
-<%= link_to "Go to the other listings",  bikes_path %>
-<br>
-<%= link_to "Delete this bike", bike_path(@bike),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+    <%= link_to "Go to the other listings",  bikes_path , class: "btn btn-warning"%>
+    <br>
+    <%= link_to "Delete this bike", bike_path(@bike),
+    method: :delete,
+    data: { confirm: "Are you sure?" }, class: "btn btn-info"%>
+  </div>
+</div>
 
