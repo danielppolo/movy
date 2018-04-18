@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
-gem "pundit"
-
+gem 'geocoder'
+gem 'unsplash'
+gem 'binding_of_caller'
+gem 'better_errors'
+gem 'pundit'
 gem 'faker'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'

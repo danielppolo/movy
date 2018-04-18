@@ -1,0 +1,27 @@
+<h1>Modify a bike</h1>
+
+<br>
+
+<%= simple_form_for [@user, @bike] do |f| %>
+  <h3>Change the mandatory information</h3>
+  <br>
+  <%= f.input :rate, placeholder: 'Example: paolo@gmail.com'%> <%= "$/day" %>
+  <%= f.input :photo, placeholder: 'Example: moto_photo.jpeg'%>
+  <%= f.input :model, placeholder: 'Example: Monster'%>
+  <%= f.input :location, placeholder: 'Example: Via Aosta 4 Milano' %>
+
+  <br>
+  <h3>Change the Additional information</h3>
+  <%= f.input :make, placeholder: 'Example: Honda'%>
+  <%= f.input :category, placeholder: 'Example: Sport'%>
+  <%= f.input :year, placeholder: 'Example: 2017'%>
+  <%= f.input :description, placeholder: 'Example: Perfect for outrdoor'%>
+  <%= f.input :cc, placeholder: '150'%> <%= "cc / Cubic Centimeter" %>
+  <%= f.input :consumption, placeholder: 'Example: 6.5'%> <%= "km/liter" %>
+
+  <%= f.submit "Add the changes to the booking", class: "btn btn-primary" %>
+  <% end %>
+
+  <br>
+
+<%= link_to "Go to the homepage",  bikes_path %>

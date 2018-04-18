@@ -1,11 +1,19 @@
-class BikePolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
 
   def show?
-    return true
+    true
+  end
+
+  def new?
+    create?
   end
 
   def create?
-    return true
+    true
+  end
+
+  def edit?
+    update?
   end
 
   def update?
@@ -16,13 +24,17 @@ class BikePolicy < ApplicationPolicy
     record.user == user
   end
 
-  def toggle?
+  def approve?
+    record.user == user
+  end
+
+  def decline?
     record.user == user
   end
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 end
