@@ -1,6 +1,6 @@
 class BikesController < ApplicationController
 
-  before_action :set_bikes, only: [:show, :edit, :update, :destroy]
+  before_action :set_bikes, only: [:show, :edit, :update, :destroy, :toggle]
 
 
   def index
@@ -44,7 +44,12 @@ class BikesController < ApplicationController
   def destroy
     authorize @bike
     @bike.destroy
-    redirect_to bikes_path
+  end
+
+  def toggle
+    authorize @bike
+    @bike.available? ? @bike.unavailable! : @bike.available!
+    redirect_to bike_path(@bike)
   end
 
   def set_bikes
