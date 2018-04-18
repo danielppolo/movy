@@ -5,6 +5,14 @@ class BikesController < ApplicationController
 
   def index
     @bikes = policy_scope(Bike)
+    @bikes_co = @bikes.where.not(latitude: nil, longitude: nil) #BANANA WILL CRASH PROBABLY
+
+    @markers = @bikes_co.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
   end
 
   def show
