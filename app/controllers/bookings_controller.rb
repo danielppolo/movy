@@ -7,8 +7,9 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @bike = Bike.find(params[:bike_id])
     authorize @booking
+    @bike = Bike.find(params[:bike_id])
+    @marker = [{ lat: @bike.latitude, lng: @bike.longitude }]
   end
 
   def create
