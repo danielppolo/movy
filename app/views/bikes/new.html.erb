@@ -1,28 +1,36 @@
-<h1>Add a bike</h1>
-
-<br>
-
+<div class="container">
+<h2>Add a bike</h2>
 <%= simple_form_for [@user, @bike] do |f| %>
-  <h3>Mandatory information</h3>
+  <h6>Mandatory information</h6>
   <br>
-  <%= f.input :rate %> <%= "$/day" %>
-  <%= f.input :photo %>
-  <%= f.input :model %>
-  <%= f.input :location %>
+	<div class="row"><div class="col-lg-6"><%= f.input :rate %> <%= "$/day" %></div>
+  <div class="col-lg-6"><%= f.input :photo %></div></div>
+  <div class="row"><div class="col-lg-6"><%= f.input :model %></div>
+  <div class="col-lg-6"><%= f.input :location %></div></div>
 
   <br>
-  <h3>Additional information</h3>
-  <%= f.input :make %>
-  <%= f.input :category %>
-  <%= f.input :year %>
-  <%= f.input :description %>
-  <%= f.input :cc %>
-  <%= f.input :consumption %>
+  <h6>Additional information</h6>
+  <div class="row">
+  	<div class="col-lg-6"><%= f.input :make %></div>
+  <div class="col-lg-6"><%= f.input :category %></div>
+  </div>
+  <div class="row">
+  	<div class="col-lg-6"><%= f.input :year %></div>
+  <div class="col-lg-6"><%= f.input :description %></div>
+  </div>
+  <div class="row">
+  	<div class="col-lg-6"><%= f.input :cc %></div>
+  <div class="col-lg-6"><%= f.input :consumption %></div>
+  </div>
 
-  <%= f.submit "Add the booking", class: "btn btn-primary" %>
+  <div class="row">
+  		<div class="col-lg-4 col-lg-offset-4">  <%= f.submit "Add the booking", class: "btn btn-primary
+  		btn-block" %></div>
   <% end %>
-
+</div>
   <br>
-
-<%= link_to "Go to the homepage",  bikes_path %>
+  <div class="row">
+<div class="col-lg-3 col-lg-offset-9"><%= link_to "Go to the homepage",  root_path, class: "btn btn-warning btn-block" %></div></div>
+</div>
+<br>
 
