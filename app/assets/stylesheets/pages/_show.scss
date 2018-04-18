@@ -1,0 +1,24 @@
+.h1-div-title-showpage {
+  color: blue;
+  margin: 15px;
+}
+
+.div-container-bike-show {
+  margin: 20px;
+}
+
+.div-buttons-bike-show {
+display: flex;
+justify-content: space-around;
+}
+
+
+.image-show-bike {
+width: 100%;
+height: auto;
+}
+
+.special-badge  {
+  background-color: $brand-success;
+  font-size: 40px;
+}
