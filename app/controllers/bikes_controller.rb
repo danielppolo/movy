@@ -16,7 +16,9 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bike = current_user.bikes.new(bikes_params)
+    @bike = Bike.new(bike_params)
+    @bike.user = current_user
+    # @bike = current_user.bikes.new(bike_params)
     authorize @bike
     if @bike.save
       redirect_to bike_path(@bike)
@@ -26,17 +28,23 @@ class BikesController < ApplicationController
   end
 
   def edit
-
+    @bike.user = current_user
+    authorize @bike
   end
 
   def update
-
+    if @bike.update(bike_params)
+      redirect_to bike_path(@bike)
+    else
+      render :edit
+    end
   end
 
-  def destroy
-    @bike.destroy
-    authorize @bike
 
+  def destroy
+    authorize @bike
+    @bike.destroy
+    redirect_to bikes_path
   end
 
   def set_bikes
@@ -44,4 +52,15 @@ class BikesController < ApplicationController
     authorize @bike
   end
 
+
+  private
+
+  def bike_params
+    params.require(:bike).permit(:make, :model, :description, :year, :category,
+     :cc, :rate, :photo, :location, :consumption, :status)
+  end
+
+
 end
+
+
