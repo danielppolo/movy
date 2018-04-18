@@ -3,26 +3,26 @@
 <br>
 
 <%= simple_form_for [@user, @bike] do |f| %>
-  <h3>Mandatory information</h3>
-  <br>
-  <%= f.input :rate %> <%= "$/day" %>
-  <%= f.input :photo %>
-  <%= f.input :model %>
-  <%= f.input :location %>
+<h3>Mandatory information</h3>
+<br>
+<%= f.input :rate, placeholder: 'Example: paolo@gmail.com'%> <%= "$/day" %>
+<%= f.input :photo, placeholder: 'Example: moto_photo.jpeg'%>
+<%= f.input :model, placeholder: 'Example: Monster'%>
+<%= f.input :location, placeholder: 'Example: Via Aosta 4 Milano' %>
 
-  <br>
-  <h3>Additional information</h3>
-  <%= f.input :make %>
-  <%= f.input :category %>
-  <%= f.input :year %>
-  <%= f.input :description %>
-  <%= f.input :cc %>
-  <%= f.input :consumption %>
+<br>
+<h3>Additional information</h3>
+<%= f.input :make, placeholder: 'Example: Honda'%>
+<%= f.input :category, placeholder: 'Example: Sport'%>%>
+<%= f.input :year, placeholder: 'Example: 2017'%>%>
+<%= f.input :description, placeholder: 'Example: Perfect for outrdoor'%> %>
+<%= f.input :cc, placeholder: '150'%> <%= "cc / Cubic Centimeter" %>
+<%= f.input :consumption, placeholder: 'Example: 6.5'%> <%= "km/liter" %>
 
-  <%= f.submit "Add the booking", class: "btn btn-primary" %>
-  <% end %>
+<%= f.submit "Add the booking", class: "btn btn-primary" %>
+<% end %>
 
-  <br>
+<br>
 
 <%= link_to "Go to the homepage",  bikes_path %>
 
