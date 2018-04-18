@@ -1,6 +1,13 @@
+
 <%= simple_form_for @profile do |f| %>
- <%= f.input :name %>
- <%= f.input :bio %>
- <%= f.input :photo %>
- <%= f.submit class: "btn btn-danger"  %>
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-lg-offset-4"> <%= f.input :name %></div></div>
+<div class="row">
+<div class="col-lg-4 col-lg-offset-4"> <%= f.input :bio %></div>
+</div>
+<div class="row">
+ <div class="col-lg-4 col-lg-offset-4"><%= f.input :photo %></div></div>
+<div class="row"><div class="col-lg-4 col-lg-offset-4"> <%= f.submit class: "btn btn-danger btn-block"  %></div></div>
 <% end %>
+</div>
