@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+gem 'geocoder'
 gem 'unsplash'
 gem 'binding_of_caller'
 gem 'better_errors'
