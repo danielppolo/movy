@@ -12,12 +12,11 @@
     </div>
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
+    <%= link_to "Rent bike", bikes_path, class: "btn btn-primary" %>
 
-        <!-- Links when logged in -->
-        <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Rent Out your bike", new_bike_path, class: "btn btn-warning" %>
+
 
         <!-- Avatar with dropdown menu -->
         <div class="navbar-wagon-item">
