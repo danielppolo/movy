@@ -75,3 +75,18 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+@media (max-width: 768px){
+	.navbar-desktop{
+		display:none;
+	}
+	.model-location-input{
+		padding-top: 5px;
+		padding-bottom:5px;
+	}
+}
+@media (min-width: 768px)
+{
+	.navbar-mob{
+		display:none;
+	}
+}
