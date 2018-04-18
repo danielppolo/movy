@@ -1,0 +1,27 @@
+<h1>Modify a bike</h1>
+
+<br>
+
+<%= simple_form_for [@user, @bike] do |f| %>
+  <h3>Change the mandatory information</h3>
+  <br>
+  <%= f.input :rate %> <%= "$/day" %>
+  <%= f.input :photo %>
+  <%= f.input :model %>
+  <%= f.input :location %>
+
+  <br>
+  <h3>Change the Additional information</h3>
+  <%= f.input :make %>
+  <%= f.input :category %>
+  <%= f.input :year %>
+  <%= f.input :description %>
+  <%= f.input :cc %>
+  <%= f.input :consumption %>
+
+  <%= f.submit "Add the changes to the booking", class: "btn btn-primary" %>
+  <% end %>
+
+  <br>
+
+<%= link_to "Go to the homepage",  bikes_path %>
