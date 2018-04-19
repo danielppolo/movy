@@ -1,21 +1,34 @@
 <div class="dashboard-wrapper">
   <div class="container">
     <div class="content">
-      <div class="card-info half-content profile-info">
-        <h1><%= @profile.name %></h1>
-        <p><%= @profile.bio %></p>
-        <p><%= @profile.experience %></p>
-        <%= link_to  "Edit", edit_profile_path(@profile)  %>
-      </div>
-      <div class="card-info half-content profile-bookings">
-        <h1>Bookings</h1>
+      <div class="card-info half-content profile-bookings text-center">
+        <h2>Bookings</h2>
         <% @profile.user.bookings.each do |b| %>
         <div class="booking-info">
-          <p><%= b.bike.make %></p>
-          <p><%= b.bike.model %></p>
+          <p><%= b.bike.make %> - <%= b.bike.model %></p>
+          <p><%= b.status %></p>
           <span> <%= b.start_date %></span>
           <span> <%= b.end_date %></span>
         </div>
+        <% end %>
+      </div>
+
+      <div class="card-info half-content profile-bikes text-center">
+        <h2>Your requests</h2>
+        <% @profile.user.bikes.each do |bike| %>
+        <h3><%= bike.make %> - <%= bike.model %></h3>
+        <p><%= bike.status %></p> <%= link_to "Change", toggle_bike_path(bike) %>
+        <% bike.bookings.each do |b| %>
+        <div class="booking-info">
+          <p>From: <%= b.start_date %></p>
+          <p>To: <%= b.end_date %></p>
+          <p><%= b.status %></p>
+          <% if b.bike.user == current_user %>
+          <%= link_to "Accept", approve_booking_path(b) %>
+          <%= link_to "Decline", decline_booking_path(b) %>
+          <% end %>
+        </div>
+        <% end %>
         <% end %>
       </div>
     </div>

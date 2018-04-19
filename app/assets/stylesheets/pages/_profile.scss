@@ -2,7 +2,7 @@
 .dashboard-wrapper {
   width: 100vw;
   height: 100vh;
-  margin: 0;
+  margin: 3em 0;
 }
 
 .content {
@@ -12,16 +12,36 @@
 }
 
 .half-content {
-    width: 45%;
+    width: 48%;
+    height: 100%;
 
+  div:last-child {
+    border: none;
+  }
 }
 
 .profile-info {
-  height: 100%;
+  // height: 100%;
 }
 
 .booking-info {
   margin: 1em 0;
   border: none;
   border-bottom: 1px solid black;
+
 }
+
+.accepted {
+
+}
+
+.declined {
+
+}
+
+.booking-avatar {
+  width: 60%;
+  max-height: 200px;
+  border-radius: 50%;
+}
+
