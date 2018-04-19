@@ -3,11 +3,11 @@
 
 .banner-home{
   padding: 20px;
-  background-image :url('/assets/bitch.jpg');
+  background-image: linear-gradient(-200deg, rgba(0,10,60,0.4) 50%, rgba(0,10,60,0.4) 10%), url('/assets/bitch.jpg');
 	height: 100vh;
   background-size: cover;
   background-position: center;
-  color: black;
+  color: white;
   text-align: center;
 
 }
@@ -28,7 +28,8 @@
   font-weight:bold;
 }
 .link_to{
-  font-size:30px;
+  font-size:22px;
+  color:white !important;
 }
 
 // h2 and steps to rent a bike
@@ -49,5 +50,6 @@
 //testimonials
 .ange-photo{
   border-radius: 50%;
+}
 
 
