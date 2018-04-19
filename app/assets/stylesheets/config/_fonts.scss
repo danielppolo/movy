@@ -1,10 +1,11 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Bitter:400,700|Raleway:300,400,600,800,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,900|Open+Sans:400,700');
 
 
 // Define fonts for body and headers
-$body-font: "Raleway",;
-$headers-font: "Bitter";
+$body-font: 'Open Sans';
+
+$headers-font: 'Montserrat';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

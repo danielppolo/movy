@@ -3,6 +3,7 @@ User.destroy_all
 Profile.destroy_all
 Bike.destroy_all
 Booking.destroy_all
+
 DATA = {
   users: {
     name: %w(Daniel Sonia Cali Giacomo Juan Yuan Angelica Francesco Andy Arbi Fra Michele Michael Marco Daniel Mehdi James),
@@ -13,6 +14,7 @@ DATA = {
     category: %w(Sport Scooter Outdoor Roadster City Cruiser Chopper Touring Street),
     },
 }
+
 p "Feeding REAL users"
   DATA[:users][:name].each do |person|
     name = person.gsub("-", " ").downcase
@@ -21,13 +23,15 @@ p "Feeding REAL users"
     u.save
   end
 users = User.all
+
 p "Baking some REAL bikes"
 20.times do
   Bike.create(make: DATA[:bikes][:make].sample, model: (Faker::Vehicle.vin).first(3), description: Faker::VForVendetta.quote,
-  year: rand(1950...2018).round, photo: "https://loremflickr.com/300/300/motorcycle",category: DATA[:bikes][:category].sample, cc: rand(550).round, rate: Faker::Commerce.price, user: users.sample, location: Faker::Address.street_address,
+  year: rand(1950...2018).round, category: DATA[:bikes][:category].sample, cc: rand(550).round, rate: Faker::Commerce.price, user: users.sample, location: Faker::Address.street_address,
   consumption: Faker::Commerce.price)
 end
 bikes = Bike.all
+
 p "Matching!"
 60.times do
   Booking.create(start_date:Faker::Date.between(60.days.ago, 2.days.ago), end_date: Faker::Date.between(60.days.ago, Date.today), user: users.sample, bike: bikes.sample)

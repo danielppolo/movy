@@ -1,0 +1,27 @@
+// Dashboard
+.dashboard-wrapper {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  // height: 600px;
+}
+
+.half-content {
+    width: 45%;
+
+}
+
+.profile-info {
+  height: 100%;
+}
+
+.booking-info {
+  margin: 1em 0;
+  border: none;
+  border-bottom: 1px solid black;
+}
