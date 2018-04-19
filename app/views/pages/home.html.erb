@@ -1,18 +1,63 @@
-<div class="container">
-	<div class="jumbotron">
-		<h1>Moovy</h1>
-		<p>Rent a bike, or rent your bike.</p>
-		<a href="#" class="btn btn-primary">Rent a bike</a>
-				<a href="#" class="btn btn-warning">Rent your bike</a>
-
-	</div>
-	<div class="col-md-8"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros non pellentesque tristique. Praesent et accumsan arcu. Mauris porttitor diam eu finibus cursus. Fusce feugiat tristique neque quis sodales. Suspendisse orci dolor, ultrices et egestas id, viverra at eros. Phasellus odio felis, tincidunt id erat non, mollis luctus nulla. Curabitur porttitor nec eros eu elementum. Mauris posuere dolor quis condimentum malesuada. Phasellus vitae auctor lorem, porttitor commodo ligula. Mauris gravida convallis mauris, eget hendrerit turpis vulputate ac. Vestibulum rhoncus, turpis in porttitor bibendum, justo purus tristique ex, a imperdiet elit velit ut nisl. Pellentesque eleifend tortor ac mi cursus laoreet vel non diam.</p></div>
-	<div class="col-md-4"><%= image_tag("pass_key.jpg", class: "img-round-home") %>	</div>
-<!-- 	<div class="row">
-		<h2 class="text-center">3 simple steps</h2>
-		<div class="col-md-4">LOREM</div>
-		<div class="col-md-4">LOREM</div>
-		<div class="col-md-4">LOREM</div>
-
-	</div> -->
+<div class="banner-home">
+  <div class="banner-content">
+    <h1 class="slogan">Movy</h1>
+    <p>Pick your bike, Change your life</p>
+    <%= render "shared/searchbar" %>
+    <div class="link_to">
+    <%= link_to "Rent out your bike", new_bike_path %>
+  </div>
+  </div>
 </div>
+
+
+
+
+<div class="EXPERIENCE">
+  <h2>EXPERIENCE FREEDOM IN 3 STEPS</h2>
+</div>
+<br>
+
+
+  <div class="steps-bike">
+  <span class="glyphicon glyphicon-search">
+    <p>Search</p>
+  </span>
+  <span class="glyphicon glyphicon-hand-up">
+    <p>Book</p>
+  </span>
+  <span class="glyphicon glyphicon-road">
+    <p>Drive</p>
+  </span>
+</div>
+
+
+
+<br>
+<br>
+
+<div class="testimonials">
+
+  <div class="ange">
+    <div class="ange-photo">
+
+      <%= image_tag ("angelica.png"), class: "ange-photo" %>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

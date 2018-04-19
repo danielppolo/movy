@@ -1,11 +1,51 @@
-.jumbotron{
-  background-image: url('/assets/bg_bike.jpg');
- 	background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   color: #FFF;
+//banner
+
+.banner-home{
+  padding: 20px;
+  background-image :url('/assets/bitch.jpg');
+	height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  text-align: center;
+
 }
-.img-round-home{
-	border-radius: 50%;
-	height: 250px;
+
+.banner-content{
+  padding-top: 220px;
+}
+
+.slogan{
+ font-size: 50px;
+  font-weight: bold;
+
+
+}
+.banner-home p{
+  font-size: 25px;
+
+  font-weight:bold;
+}
+.link_to{
+  font-size:30px;
+}
+
+// h2 and steps to rent a bike
+
+.EXPERIENCE > h2{
+  text-align: center;
+}
+
+.steps-bike{
+  font-size:60px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+//testimonials
+.ange-photo{
+  border-radius: 50%;
 }
