@@ -1,17 +1,25 @@
-<div class="wraper-profiles">
-
-<div class="row">
-  <div class="col-lg-4 col-lg-offset-4 profile-title">Profile of <%= @profile.name %></div>
-</div>
-
-<div class="row">
- <div class="col-lg-4 col-lg-offset-4"><p>Bio: <%= @profile.bio %></p></div> <!-- para eseñar la bio del usuario --></div>
-<div class="row">
-<div class="col-lg-4 col-lg-offset-4"><p>
-   <%= link_to  "Edit", edit_profile_path(@profile)  %>
-</p></div>
-</div>
-
+<div class="dashboard-wrapper">
+  <div class="container">
+    <div class="content">
+      <div class="card-info half-content profile-info">
+        <h1><%= @profile.name %></h1>
+        <p><%= @profile.bio %></p>
+        <p><%= @profile.experience %></p>
+        <%= link_to  "Edit", edit_profile_path(@profile)  %>
+      </div>
+      <div class="card-info half-content profile-bookings">
+        <h1>Bookings</h1>
+        <% @profile.user.bookings.each do |b| %>
+        <div class="booking-info">
+          <p><%= b.bike.make %></p>
+          <p><%= b.bike.model %></p>
+          <span> <%= b.start_date %></span>
+          <span> <%= b.end_date %></span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 
