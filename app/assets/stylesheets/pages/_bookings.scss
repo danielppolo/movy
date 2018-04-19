@@ -10,4 +10,110 @@ input[type=submit] {
 
 .booking-headers {
   margin-bottom: 3em;
+  width: 40%;
+  h2 {
+    margin-top: 0;
+  }
 }
+
+
+
+.booking-photo {
+  background-image: url(https://picsum.photos/250/336);
+  width: 60%;
+  transition: transform .5s;
+  border: 1px solid #e3e7ed;
+  border-radius: 3px 3px;
+}
+
+
+.booking-photo:hover
+{
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+
+.booking-headers-photo {
+  display:flex;
+  justify-content: space-between;
+}
+
+.main-booking-box {
+  height: 500px;
+}
+
+.booking-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.col-sm-7 {
+
+}
+
+.col-sm-5 {
+
+}
+
+.div-owner-description-photo {
+ display: flex;
+}
+
+#name-id {
+  color: black;
+  font-size: 35px;
+  opacity: 0.9;
+
+}
+
+#biography-id {
+  color: black;
+  font-size: 25px;
+  opacity: 0.9;
+
+}
+
+.div-owner-description {
+  width: 70%;
+}
+
+.div-owner-photo {
+  width: 30%;
+}
+
+.owner-photo {
+  width: 100px;
+  height: 100px;
+  transition: transform .5s;
+  margin-left: 30px;
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  border: 1px solid #e3e7ed;
+}
+
+.owner-photo:hover
+{
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.booking-box-description {
+    margin-right: 50px;
+    text-align: justify;
+    opacity: 0.9;
+}
+
+.image-tag-profile-photo {
+  border-radius: 50%;
+  border: 1px solid #e3e7ed;
+}
+
+
+
+

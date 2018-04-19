@@ -56,7 +56,7 @@
 
         <td>
           <% if policy(bike).show? %>
-            <%= link_to 'Show', bike %>
+            <%= link_to 'Show', new_bike_booking_path(bike) %>
           <% end %>
         </td>
         <td>
