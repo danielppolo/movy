@@ -29,7 +29,10 @@
 }
 .link_to{
   font-size:22px;
-  color:white !important;
+
+}
+.link_to > a{
+  color: white !important;
 }
 
 // h2 and steps to rent a bike
