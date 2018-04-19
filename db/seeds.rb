@@ -15,7 +15,6 @@ DATA = {
     },
 }
 
-
 p "Feeding REAL users"
   DATA[:users][:name].each do |person|
     name = person.gsub("-", " ").downcase
@@ -37,4 +36,3 @@ p "Matching!"
 60.times do
   Booking.create(start_date:Faker::Date.between(60.days.ago, 2.days.ago), end_date: Faker::Date.between(60.days.ago, Date.today), user: users.sample, bike: bikes.sample)
 end
-
