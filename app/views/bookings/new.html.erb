@@ -1,0 +1,97 @@
+<div class="booking_wrapper">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6 main-booking-box">
+        <div class="booking-box">
+          <div class="booking-headers-photo">
+
+            <div class="booking-headers">
+              <h2><%= @bike.make %></h2>
+              <h3><%= @bike.model %></h3>
+              <h3>$<%= @bike.rate %>/day</h3>
+            </div>
+
+            <div class="booking-photo">
+              <%= image_tag @bike.photo, width: "336", height: "250"%>
+            </div>
+
+          </div>
+
+          <br>
+
+          <div class="booking-form">
+            <%= simple_form_for [@bike, @booking] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true %>
+            <%= f.input :end_date, as: :date, html5: true %>
+            <%= f.submit%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 main-booking-box">
+
+        <div
+        id="map"
+        style="width: 100%;
+        height: 100%;
+        border-radius: 5px;"
+        data-markers="<%= @marker.to_json %>"
+        >
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="booking-description-wrapper">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-7 main-booking-box">
+        <div class="booking-box-description">
+          <div class="DESCRIPTION">
+            <div class="booking-description">
+              <h2>Motorbike Description</h2>
+              <h5><%= @bike.description %></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-5 main-booking-box">
+        <div class="div-owner-description-photo">
+          <div class="div-owner-description">
+            <h2>About the owner</h2>
+            <p id="name-id"> <%= @bike.user.profile.name %></p>
+            <p id="biography-id"> Biography </p>
+          </div>
+          <div class="div-owner-photo">
+            <div class="owner-photo">
+              <% if @bike.user.profile.photo == nil %>
+                <%= image_tag @bike.user.profile.photo, class: "image-tag-profile-photo"%>
+              <% else %>
+                <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", width: "100", height: "100", class: "image-tag-profile-photo"%>
+              <% end  %>
+            </div>
+          </div>
+        </div>
+        <p> <%= @bike.user.profile.bio %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
