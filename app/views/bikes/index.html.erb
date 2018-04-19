@@ -2,13 +2,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1>Listing Motorbikes</h1>
 		</div>
 		</div>
 					<div class="row">
 		<% @bikes.each do |bike| %>
 		<div class="col-xs-12 col-sm-4">
-			<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.ducati.it/cms-web/fs//entities/accessoryimage/Monster-797-Plus_MY17_01_Standard_634x357.jpg/Monster-797-Plus_MY17_01_Standard_634x357_634x356.jpg');">
+			<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= bike.photo %>);">
 				<div class="card-category"><%= bike.location %></div>
 				<div class="card-description">
 					<h2><%= bike.make %> <%= bike.model %></h2>
@@ -16,7 +15,7 @@
 				</div>
 				<!--   <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
 				<% if policy(bike).show? %>
-				<%= link_to ' ', bike, class: "card-link" %>
+				<%= link_to ' ', new_bike_booking_path(bike), class: "card-link" %>
 				<% end %>
 <!--  <a class="card-link" href="#" ></a>
 --></div>
