@@ -1,42 +1,25 @@
 
-
-
-
-<h1 class="text-center">Bike listing</h1>
-<% @bikes.each do |bike| %>
- <div class="col-lg-4">
-   <div class="bike">
-
- <p><strong><%= bike.make %></strong> - <%= bike.model %></p>
- <p><%= bike.location %></p>
- <div class="row">
-   <% if policy(bike).show? %>
-   <div class="col-xs-12 col-sm-3">
-     <%= link_to 'Show', bike, class: "btn btn-success btn-block btn-xs" %></div>
-     <% end %>
-     <% if policy(bike).edit? == false %>
-     <div class="col-xs-12 col-sm-3">
-       <%= link_to 'Book', new_bike_booking_path(bike), class: "btn btn-warning btn-block btn-xs" %>
-     </div>
-     <% end %>
-     <% if policy(bike).update? %>
-     <div class="col-xs-12 col-sm-3">
-       <%= link_to 'Edit', edit_bike_path(bike), class: "btn btn-info btn-block btn-xs" %>
-     </div>
-     <% end %>
-     <% if policy(bike).destroy? %>
-     <div class="col-xs-12 col-sm-3">
-       <%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-block btn-xs" %>
-       <% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1>Listing Motorbikes</h1>
+		</div>
+		</div>
+					<div class="row">
+		<% @bikes.each do |bike| %>
+		<div class="col-xs-12 col-sm-4">
+			<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.ducati.it/cms-web/fs//entities/accessoryimage/Monster-797-Plus_MY17_01_Standard_634x357.jpg/Monster-797-Plus_MY17_01_Standard_634x357_634x356.jpg');">
+				<div class="card-category"><%= bike.location %></div>
+				<div class="card-description">
+					<h2><%= bike.make %> <%= bike.model %></h2>
+					<p><span><%= bike.rate %> <%= "$/day" %></span></p>
+				</div>
+				<!--   <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+				<% if policy(bike).show? %>
+				<%= link_to ' ', bike, class: "card-link" %>
+				<% end %>
+<!--  <a class="card-link" href="#" ></a>
+--></div>
 </div>
-     </div>
-   </div>
- </div>
- </div>
- <% end %>
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+<% end %>
+</div>
