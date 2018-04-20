@@ -5,14 +5,17 @@ background-color: rgba(20,80,20,0.3);
 }
 
 .icons {
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  margin: 0 auto !important;
+  width: 100vw;
+  justify-content: space-around;
   max-width:150px;
   padding-top:18px;
 
 }
 .icons > a{
   color: black;
+  padding: 0 5%;
 }
 .fb-ic:hover{
   -webkit-transform: scale(1.1);
@@ -29,9 +32,7 @@ background-color: rgba(20,80,20,0.3);
   transform: scale(1.1);
 }
 
-.container-media{
-  max-width: 180px;
-}
+
 .copy{
   margin:10px;
 }
