@@ -8,8 +8,25 @@ background-color: rgba(20,80,20,0.3);
   display: flex;
   justify-content: space-between;
   max-width:150px;
-  padding-top:10px;
+  padding-top:18px;
 
+}
+.icons > a{
+  color: black;
+}
+.fb-ic:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.tw-ic:hover{
+
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.ins-ic:hover{
+
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .container{
