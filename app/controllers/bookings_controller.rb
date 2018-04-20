@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+	  skip_before_action :authenticate_user!, only: [ :new ]
+
     before_action :set_booking, only: [:show, :edit, :update, :destroy, :decline, :approve]
 
   def index
@@ -10,6 +12,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @bike = Bike.find(params[:bike_id])
     @marker = [{ lat: @bike.latitude, lng: @bike.longitude }]
+    test1 = 0
   end
 
   def create
@@ -19,7 +22,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created!' #BANANA
+      redirect_to profile_path(current_user.profile), notice: 'Booking was successfully created!' #BANANA
     else
       render :new
     end
@@ -52,13 +55,13 @@ class BookingsController < ApplicationController
   def approve
     authorize @booking
     @booking.accepted!
-    redirect_to @booking, notice: 'Booking was accepted!.'
+    redirect_to profile_path(current_user.profile), notice: 'Booking was accepted!.'
   end
 
   def decline
     authorize @booking
     @booking.rejected!
-    redirect_to @booking, notice: 'Booking was declined!.'
+    redirect_to profile_path(current_user.profile), notice: 'Booking was declined!.'
   end
 
   private

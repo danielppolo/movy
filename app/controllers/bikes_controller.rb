@@ -1,16 +1,27 @@
 class BikesController < ApplicationController
-
+	  skip_before_action :authenticate_user!, only: [ :index ]
   before_action :set_bikes, only: [:show, :edit, :update, :destroy, :toggle]
 
 
   def index
     @mbikes = policy_scope(Bike)
-    if params.has_key?(:q)
-      @bikes = Bike.where(
-        'make ILIKE ? OR model ILIKE ? OR location ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%")
+
+
+    if params[:query].present?
+      sql_query = "make ILIKE :query OR model ILIKE :query"
+      @query_bikes = Bike.where(sql_query, query: "%#{params[:query]}%")
+      if @query_bikes == []
+        @bikes = Bike.all
+      else
+        @bikes = @query_bikes
+      end
     else
       @bikes = Bike.all
     end
+
+
+
+
     @bikes_co = @mbikes.where.not(latitude: nil, longitude: nil) #BANANA WILL CRASH PROBABLY
 
     @markers = @bikes_co.map do |bike|
@@ -64,7 +75,7 @@ def create
   def toggle
     authorize @bike
     @bike.available? ? @bike.unavailable! : @bike.available!
-    redirect_to bike_path(@bike)
+    redirect_to profile_path(@bike.user.profile)
   end
 
   def set_bikes

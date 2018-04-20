@@ -1,27 +1,54 @@
+<%= render "layouts/navbar" %>
+<%= render 'shared/flashes' %>
 <div class="dashboard-wrapper">
   <div class="container">
-    <div class="content">
-      <div class="card-info half-content profile-info">
-        <h1><%= @profile.name %></h1>
-        <p><%= @profile.bio %></p>
-        <p><%= @profile.experience %></p>
-        <%= link_to  "Edit", edit_profile_path(@profile)  %>
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6">
+        <h2>Your bikes</h2>
+        <% @profile.user.bikes.each do |bike| %>
+        <div class="card-rentals">
+          <div class="card-rentals-bike">
+            <div class="card-rentals-bike-info">
+              <h3><%= bike.make %> - <%= bike.model %></h3>
+              <p><%= bike.status.capitalize %></p>
+            </div>
+            <div class="card-bike-status">
+             <%= link_to "Change", toggle_bike_path(bike) %>
+           </div>
+         </div>
+         <% bike.bookings.each do |b| %>
+         <div class="card-requests">
+          <div class="card-requests-info">
+            <h4><%= b.user.profile.name %> requested</h4>
+            <p>from <%= b.start_date.strftime('%d %b %Y') %> to <%= b.end_date.strftime('%d %b %Y') %></p>
+            <p><%= b.status.capitalize %></p>
+          </div>
+          <div class="card-requests-actions">
+            <% if b.bike.user == current_user %>
+            <%= link_to "Accept", approve_booking_path(b) %>
+            <%= link_to "Decline", decline_booking_path(b) %>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div class="card-info half-content profile-bookings">
-        <h1>Bookings</h1>
+      <% end %>
+      <% end %>
+    </div>
+      <div class="col-xs-12 col-sm-6">
+        <h2>Your bookings</h2>
         <% @profile.user.bookings.each do |b| %>
-        <div class="booking-info">
-          <p><%= b.bike.make %></p>
-          <p><%= b.bike.model %></p>
-          <span> <%= b.start_date %></span>
-          <span> <%= b.end_date %></span>
+        <div class="card-bookings">
+          <div class="card-booking-info">
+            <h3><%= b.bike.make %> - <%= b.bike.model %></h3>
+            <h4> From <%= b.start_date.strftime('%d %b')  %> to <%= b.end_date.strftime('%d %b %Y')  %></h4>
+          </div>
+          <div class="card-booking-status">
+            <p><%= b.status.capitalize %></p>
+          </div>
         </div>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
-
-
-
-
+</div>

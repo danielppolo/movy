@@ -1,3 +1,6 @@
+<%= render "layouts/navbar" %>
+<%= render 'shared/flashes' %>
+<br>
 <div class="booking_wrapper">
   <div class="container">
     <div class="row">
@@ -9,11 +12,11 @@
             <div class="booking-headers">
               <h2><%= @bike.make %></h2>
               <h3><%= @bike.model %></h3>
-              <h3>$<%= @bike.rate %>/day</h3>
+              <h4>$<%= @bike.rate %>/day</h4>
             </div>
 
             <div class="booking-photo">
-              <%= image_tag @bike.photo, width: "336", height: "250"%>
+              <%= image_tag @bike.photo%>
             </div>
 
           </div>

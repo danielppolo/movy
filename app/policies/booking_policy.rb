@@ -25,11 +25,11 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def approve?
-    record.user == user
+    record.bike.user == user
   end
 
   def decline?
-    record.user == user
+    record.bike.user == user
   end
 
   class Scope < Scope

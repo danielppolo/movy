@@ -1,3 +1,5 @@
+  <%= render "layouts/navbar" %>
+
 <% @bookings.each do |e| %>
 <h3><%= e.bike.make %> - <%= e.bike.model %></h3>
 <h3><%= e.user.email %></h3>
