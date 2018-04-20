@@ -1,0 +1,20 @@
+
+
+<div class="navbar-mob">
+			<div class="container">
+		<div class="row ">
+			<div class="col-sm-12 model-location-input">
+<%= form_tag bikes_path, class: "form-inline" ,method: :get do %>
+
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control mr-sm-2", id: "searchbar-mobile",
+    placeholder: "Find a bike"
+    %></div>
+    				<div class="col-sm-12">
+
+    <%= button_tag "Search a Bike", id: "searchbutton", class: "btn btn-primary btn-block" %>
+  </div>
+</div>
+<% end %>
+</div></div>

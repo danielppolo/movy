@@ -2,7 +2,7 @@
 .dashboard-wrapper {
   width: 100vw;
   height: 100vh;
-  margin: 0;
+  margin: 1em 0;
 }
 
 .content {
@@ -12,16 +12,117 @@
 }
 
 .half-content {
-    width: 45%;
+    width: 48%;
+    height: 100%;
 
+  div:last-child {
+    border: none;
+  }
 }
 
 .profile-info {
-  height: 100%;
+  // height: 100%;
 }
 
-.booking-info {
-  margin: 1em 0;
-  border: none;
-  border-bottom: 1px solid black;
+.card-bookings {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+    * {
+      margin: 0;
+    }
+  .card-booking-info {
+    margin: 0.5em 0;
+    border: none;
+    // border-bottom: 1px solid black;
+
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1em;
+    }
+  }
 }
+.card-rentals {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 0 1em;
+  margin: 0;
+  margin-bottom: 0.5em;
+  margin: 0.5em 0;
+
+  * {
+    margin: 0.5em 0;
+    border: none;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+
+  .card-rentals-bike {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+
+    .card-bike-status {
+      display:flex;
+
+      * {
+        margin: 0;
+        padding-left: 0.5em;
+      }
+    }
+  }
+
+  .card-requests {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    .card-requests-info {
+      p {
+        font-size: 1em;
+      }
+    }
+
+    .card-requests-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    * {
+      // margin: 0;
+      text-align: center;
+    }
+    }
+  }
+
+}
+
+.accepted {
+
+}
+
+.declined {
+
+}
+
+.booking-avatar {
+  width: 60%;
+  max-height: 200px;
+  border-radius: 50%;
+}
+

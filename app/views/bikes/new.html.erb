@@ -1,37 +1,36 @@
+  <%= render "layouts/navbar" %>
+  <%= render 'shared/flashes' %>
+  <div class="container">
+    <h2>Add a bike</h2>
+    <%= simple_form_for [@user, @bike] do |f| %>
+    <h6>Mandatory information</h6>
+    <br>
+    <div class="row"><div class="col-lg-6"><%= f.input :rate, placeholder: 'Example: paolo@gmail.com' %></div>
+    <div class="col-lg-6"><%= f.input :photo, placeholder: 'Example: moto_photo.jpeg'%></div></div>
+    <div class="row"><div class="col-lg-6"><%= f.input :model, placeholder: 'Example: Monster'%></div>
+    <div class="col-lg-6"><%= f.input :location, placeholder: 'Example: Via Aosta 4 Milano' %></div></div>
 
-<div class="container">
-  <h2>Add a bike</h2>
-  <%= simple_form_for [@user, @bike] do |f| %>
-  <h6>Mandatory information</h6>
-  <br>
-  <div class="row"><div class="col-lg-6"><%= f.input :rate, placeholder: 'Example: paolo@gmail.com'%> <%= "$/day" %> %> <%= "$/day" %></div>
-  <div class="col-lg-6"><%= f.input :photo, placeholder: 'Example: moto_photo.jpeg'%> %></div></div>
-  <div class="row"><div class="col-lg-6"><%= f.input :model, placeholder: 'Example: Monster'%> %></div>
-  <div class="col-lg-6"><%= f.input :location, placeholder: 'Example: Via Aosta 4 Milano' %></div></div>
+    <br>
+    <h6>Additional information</h6>
+    <div class="row">
+      <div class="col-lg-6"><%= f.input :make, placeholder: 'Example: Honda' %></div>
+      <div class="col-lg-6"><%= f.input :category, placeholder: 'Example: Sport' %></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6"><%= f.input :year, placeholder: 'Example: 1999'%></div>
+      <div class="col-lg-6"><%= f.input :description, placeholder: 'Example: Perfect for outrdoor' %></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6"><%= f.input :cc, placeholder: '150' %></div>
+      <div class="col-lg-6"><%= f.input :consumption, placeholder: 'Example: 6.5'%></div>
+    </div>
 
-  <br>
-  <h6>Additional information</h6>
-  <div class="row">
-    <div class="col-lg-6"><%= f.input :make, placeholder: 'Example: Honda' %></div>
-    <div class="col-lg-6"><%= f.input :category, placeholder: 'Example: Sport' %></div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6"><%= f.input :year, placeholder: 'Example: 1999'%></div>
-    <div class="col-lg-6"><%= f.input :description, placeholder: 'Example: Perfect for outrdoor' %></div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6"><%= f.input :cc, placeholder: '150' %><%= "cc / Cubic Centimeter" %></div>
-    <div class="col-lg-6"><%= f.input :consumption, placeholder: 'Example: 6.5'%> <%= "km/liter" %></div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">  <%= f.submit "Add the booking", class: "btn btn-primary
-    btn-block" %></div>
-    <% end %>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-lg-3 col-lg-offset-9"><%= link_to "Go to the homepage",  root_path, class: "btn btn-warning btn-block" %></div></div>
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">  <%= f.submit "Add the booking", class: "btn btn-primary
+      btn-block" %></div>
+      <% end %>
+    </div>
+    <br>
   </div>
   <br>
 </div>
