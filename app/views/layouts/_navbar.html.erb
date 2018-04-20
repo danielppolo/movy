@@ -72,20 +72,8 @@
 		</div>
 	</div>
 </div>
-<div class="navbar-mob">
-	<div class="container">
-		<div class="row ">
-			<div class="col-sm-12 model-location-input">
-				<form class="form-inline" method="get" action="/bikes">
+    <%= render "shared/search-mobile", id: "searchbar-in-navbar"%>
 
-					<input class="form-control mr-sm-2" type="search" placeholder="Model or Location" aria-label="Search" name="q"></div>
-				</form>
-				<div class="col-sm-12">
-					<button class="btn btn-primary btn-block" type="submit">Search a Bike</button>
-				</div>
-			</form>
-		</div></div>
-	</div></div>
 	<% else %>
 	<!-- Login link (when logged out) -->
 	<%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
