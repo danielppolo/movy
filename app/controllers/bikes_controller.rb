@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-
+	  skip_before_action :authenticate_user!, only: [ :index ]
   before_action :set_bikes, only: [:show, :edit, :update, :destroy, :toggle]
 
 
