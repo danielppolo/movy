@@ -1,0 +1,11 @@
+
+<%= form_tag bikes_path, method: :get do %>
+<div class="searchbar-div">
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control", id: "searchbar-js",
+    placeholder: "Find a bike"
+    %>
+    <%= submit_tag "My Next Ride", id: "searchbutton" %>
+  </div>
+<% end %>
