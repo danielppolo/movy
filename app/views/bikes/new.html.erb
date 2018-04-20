@@ -1,5 +1,5 @@
   <%= render "layouts/navbar" %>
-
+  <%= render 'shared/flashes' %>
   <div class="container">
     <h2>Add a bike</h2>
     <%= simple_form_for [@user, @bike] do |f| %>

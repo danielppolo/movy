@@ -1,22 +1,10 @@
+<%= render "layouts/navbar" %>
+<%= render 'shared/flashes' %>
 <div class="dashboard-wrapper">
   <div class="container">
-    <div class="content">
-      <div class="half-content profile-bookings">
-        <h2>Your bookings</h2>
-        <% @profile.user.bookings.each do |b| %>
-        <div class="card-bookings">
-          <div class="card-booking-info">
-            <h3><%= b.bike.make %> - <%= b.bike.model %></h3>
-            <h4> From <%= b.start_date.strftime('%d %b')  %> to <%= b.end_date.strftime('%d %b %Y')  %></h4>
-          </div>
-          <div class="card-booking-status">
-            <p><%= b.status.capitalize %></p>
-          </div>
-        </div>
-        <% end %>
-      </div>
+    <div class="row">
 
-      <div class="half-content profile-bikes">
+      <div class="col-xs-12 col-sm-6">
         <h2>Your bikes</h2>
         <% @profile.user.bikes.each do |bike| %>
         <div class="card-rentals">
@@ -47,6 +35,20 @@
       <% end %>
       <% end %>
     </div>
+      <div class="col-xs-12 col-sm-6">
+        <h2>Your bookings</h2>
+        <% @profile.user.bookings.each do |b| %>
+        <div class="card-bookings">
+          <div class="card-booking-info">
+            <h3><%= b.bike.make %> - <%= b.bike.model %></h3>
+            <h4> From <%= b.start_date.strftime('%d %b')  %> to <%= b.end_date.strftime('%d %b %Y')  %></h4>
+          </div>
+          <div class="card-booking-status">
+            <p><%= b.status.capitalize %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
   </div>
 </div>
 </div>
