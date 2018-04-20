@@ -64,7 +64,7 @@ def create
   def toggle
     authorize @bike
     @bike.available? ? @bike.unavailable! : @bike.available!
-    redirect_to bike_path(@bike)
+    redirect_to profile_path(@bike.user.profile)
   end
 
   def set_bikes

@@ -27,7 +27,7 @@ users = User.all
 p "Baking some REAL bikes"
 20.times do
   Bike.create(make: DATA[:bikes][:make].sample, model: (Faker::Vehicle.vin).first(3), description: Faker::VForVendetta.quote,
-  year: rand(1950...2018).round, category: DATA[:bikes][:category].sample, cc: rand(550).round, rate: Faker::Commerce.price, user: users.sample, location: Faker::Address.street_address,
+  year: rand(1950...2018).round, photo: "https://loremflickr.com/300/150/motorcycle",category: DATA[:bikes][:category].sample, cc: rand(550).round, rate: Faker::Commerce.price, user: users.sample, location: Faker::Address.street_address,
   consumption: Faker::Commerce.price)
 end
 bikes = Bike.all
