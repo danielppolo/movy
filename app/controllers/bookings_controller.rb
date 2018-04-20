@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created!' #BANANA
+      redirect_to profile_path(current_user.profile), notice: 'Booking was successfully created!' #BANANA
     else
       render :new
     end
