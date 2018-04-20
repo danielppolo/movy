@@ -13,6 +13,7 @@ var options = {
 }
 
 var typed = new Typed("#searchbar-js", options);
+var typed = new Typed("#searchbar-mobile", options);
 
 
 export { typed };
