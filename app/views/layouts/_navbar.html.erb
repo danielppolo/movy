@@ -5,13 +5,13 @@
 	<% end %>
 
 	<% if user_signed_in? %>
-	<div class="navbar-desktop">
-		<form class="form-inline" method="get" action="/bikes">
-			<input class="form-control mr-sm-2" type="search" placeholder="Model or Location" aria-label="Search" name="q">
-			<button class="btn btn-primary" type="submit">Search a Bike</button>
-		</form>
-	</div>
-	<div class="navbar-wagon-right hidden-xs hidden-sm">
+
+
+    <%= render "shared/search", id: "searchbar-in-navbar"%>
+
+
+
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
 		<%= link_to "Rent bike", bikes_path, class: "navbar-wagon-item navbar-wagon-link" %>
