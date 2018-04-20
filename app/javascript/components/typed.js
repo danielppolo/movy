@@ -1,7 +1,7 @@
 import Typed from 'typed.js';
 
 var options = {
-  strings: ["Honda", "Vespa", "Turin", "Cali", "Mexico City", "Ancona", "Brindisi", "Murcia", "Paris", "Bordeaux", "Abruzzo", "San Francisco"],
+  strings: ["Honda", "Vespa", "Sport","Scooter", "Outdoor", "BMW", "Yamaha"],
   typeSpeed: 40,
   loop: true,
   attr: "placeholder",
