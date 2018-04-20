@@ -44,37 +44,32 @@
 }
 
 .steps-bike{
-  font-size:60px;
-  display: flex;
-  justify-content: space-around;
+  // font-size:60px;
+  // display: flex;
+  // justify-content: space-around;
   background-color: rgba(20,80,20,0.3);
-  padding: 50px;
+  // padding: 50px;
   text-align:center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.glyphicon{
+	font-size: 38px;
 }
 
 
-
-// //testimonials
-
-.testimonials{
-  display: flex;
-  justify-content: space-around;
-}
-
+// //testimonialss
 h2{
   text-align:center;
 }
 figure.snip1167 {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
-  float: left;
   overflow: hidden;
-  margin: 10px 1%;
   min-width: 220px;
-  max-width: 310px;
   width: 100%;
   color: #333;
-  text-align: left;
+  text-align: center;
   box-shadow: none !important;
 }
 figure.snip1167 * {
@@ -140,4 +135,9 @@ figure.snip1167 .author h5 span {
   text-transform: none;
   display: block;
 }
-
+.testimonials h5 {
+    color: #333;
+}
+.navbar-desktop{
+	display: block !important;
+}
