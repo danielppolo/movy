@@ -48,7 +48,7 @@ def create
     # @bike = current_user.bikes.new(bike_params)
     authorize @bike
     if @bike.save
-      redirect_to bike_path(@bike)
+      redirect_to profile_path(@bike.user.profile)
     else
       render :new
     end
